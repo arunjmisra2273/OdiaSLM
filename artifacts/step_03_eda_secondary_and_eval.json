@@ -1,0 +1,204 @@
+{
+  "env_settings": {
+    "HF_TOKEN": "***REDACTED***",
+    "HF_HOME": "/mnt/d/huggingface_cache"
+  },
+  "sangraha_ori": {
+    "dataset_id": "ai4bharat/sangraha",
+    "data_dir": "verified/ori",
+    "columns": [
+      "doc_id",
+      "text",
+      "type"
+    ],
+    "text_column": "text",
+    "streamed_rows": 25000,
+    "doc_types": {
+      "web": 21238,
+      "pdf": 3761,
+      "speech": 1
+    },
+    "char_length_stats": {
+      "p5": 411.0,
+      "p10": 515.0,
+      "p25": 749.0,
+      "p50": 1129.0,
+      "p75": 1745.0,
+      "p90": 3078.1,
+      "p95": 5167.05,
+      "mean": 1873.86,
+      "max": 160685.0
+    },
+    "word_length_stats": {
+      "p5": 63.0,
+      "p10": 78.0,
+      "p25": 114.0,
+      "p50": 173.0,
+      "p75": 275.0,
+      "p90": 491.0,
+      "p95": 839.0,
+      "mean": 296.4,
+      "max": 26662.0
+    },
+    "odia_ratio_stats": {
+      "p5": 0.92,
+      "p10": 0.95,
+      "p25": 0.98,
+      "p50": 0.99,
+      "p75": 1.0,
+      "p90": 1.0,
+      "p95": 1.0,
+      "mean": 0.98,
+      "max": 1.0
+    },
+    "exact_duplicates_in_sample": 0,
+    "zwnj_docs": 0,
+    "nfkc_diff_docs": 57
+  },
+  "fineweb_edu_anchor": {
+    "dataset_id": "HuggingFaceFW/fineweb-edu",
+    "subset": "sample-10BT",
+    "columns": [
+      "text",
+      "id",
+      "dump",
+      "url",
+      "file_path",
+      "language",
+      "language_score",
+      "token_count",
+      "score",
+      "int_score"
+    ],
+    "streamed_rows": 10000,
+    "char_length_stats": {
+      "p5": 726.0,
+      "p10": 939.0,
+      "p25": 1507.75,
+      "p50": 2764.0,
+      "p75": 4911.75,
+      "p90": 8916.7,
+      "p95": 14269.05,
+      "mean": 4730.75,
+      "max": 485117.0
+    },
+    "word_length_stats": {
+      "p5": 117.0,
+      "p10": 151.0,
+      "p25": 246.0,
+      "p50": 452.0,
+      "p75": 796.0,
+      "p90": 1452.1,
+      "p95": 2319.15,
+      "mean": 769.48,
+      "max": 75241.0
+    }
+  },
+  "odia_eval_benchmark": {
+    "dataset_id": "saidutta69/odia-eval-benchmark",
+    "repo_files": [
+      ".gitattributes",
+      "README.md",
+      "data/odia-00000-of-00001.parquet"
+    ],
+    "splits": [
+      "odia"
+    ],
+    "split_details": {
+      "odia": {
+        "total_rows_counted": 125243,
+        "columns": [
+          "id",
+          "task",
+          "language",
+          "prompt",
+          "prompt_odia",
+          "reference",
+          "reference_odia",
+          "choices",
+          "choices_odia",
+          "answer",
+          "domain",
+          "source",
+          "subset",
+          "split",
+          "dataset_name"
+        ],
+        "task_distribution": {
+          "multiple_choice": 53001,
+          "qa": 39657,
+          "generation": 23738,
+          "classification": 4050,
+          "math": 2638,
+          "ner": 1147,
+          "translation": 1012
+        },
+        "combined_char_stats": {
+          "p5": 129.0,
+          "p10": 140.0,
+          "p25": 171.0,
+          "p50": 278.0,
+          "p75": 517.0,
+          "p90": 897.0,
+          "p95": 1161.0,
+          "mean": 411.33,
+          "max": 6156.0
+        },
+        "sample_rows": [
+          {
+            "id": "bhram_il/0",
+            "task": "qa",
+            "language": "ory",
+            "prompt": "Arrange the following events in chronological order: Mexican-American War, Second Balkan War, Gaza war (2023–), War in A...",
+            "prompt_odia": "Arrange the following events in chronological order: Mexican-American War, Second Balkan War, Gaza war (2023–), War in A...",
+            "reference": "Battle of Poitiers, Mexican-American War, Second Balkan War, War in Afghanistan (2001–2021), Gaza war (2023–)",
+            "reference_odia": "Battle of Poitiers, Mexican-American War, Second Balkan War, War in Afghanistan (2001–2021), Gaza war (2023–)",
+            "choices": [],
+            "choices_odia": [],
+            "answer": "",
+            "domain": "chrono_questions",
+            "source": "bhram_il",
+            "subset": "",
+            "split": "test",
+            "dataset_name": "bhram_il"
+          },
+          {
+            "id": "bhram_il/1",
+            "task": "qa",
+            "language": "ory",
+            "prompt": "નીચેની ઘટનાઓને કાલક્રમિક ક્રમમાં ગોઠવો: મેક્સિકન-અમેરિકન યુદ્ધ, બીજું બાલ્કન યુદ્ધ, ગાઝા યુદ્ધ (2023–), અફઘાનિસ્તાનમાં ય...",
+            "prompt_odia": "નીચેની ઘટનાઓને કાલક્રમિક ક્રમમાં ગોઠવો: મેક્સિકન-અમેરિકન યુદ્ધ, બીજું બાલ્કન યુદ્ધ, ગાઝા યુદ્ધ (2023–), અફઘાનિસ્તાનમાં ય...",
+            "reference": "પોઇટિયર્સનું યુદ્ધ, મેક્સિકન-અમેરિકન યુદ્ધ, બીજું બાલ્કન યુદ્ધ, અફઘાનિસ્તાનમાં યુદ્ધ (2001–2021), ગાઝા યુદ્ધ (2023–)",
+            "reference_odia": "પોઇટિયર્સનું યુદ્ધ, મેક્સિકન-અમેરિકન યુદ્ધ, બીજું બાલ્કન યુદ્ધ, અફઘાનિસ્તાનમાં યુદ્ધ (2001–2021), ગાઝા યુદ્ધ (2023–)",
+            "choices": [],
+            "choices_odia": [],
+            "answer": "",
+            "domain": "chrono_questions",
+            "source": "bhram_il",
+            "subset": "",
+            "split": "test",
+            "dataset_name": "bhram_il"
+          },
+          {
+            "id": "bhram_il/2",
+            "task": "qa",
+            "language": "ory",
+            "prompt": "निम्नलिखित घटनाओं को कालानुक्रमिक क्रम में व्यवस्थित करें: मैक्सिकन-अमेरिकी युद्ध, दूसरा बाल्कन युद्ध, गाजा युद्ध (2023–...",
+            "prompt_odia": "निम्नलिखित घटनाओं को कालानुक्रमिक क्रम में व्यवस्थित करें: मैक्सिकन-अमेरिकी युद्ध, दूसरा बाल्कन युद्ध, गाजा युद्ध (2023–...",
+            "reference": "पोइटियर्स का युद्ध, मैक्सिकन-अमेरिकी युद्ध, दूसरा बाल्कन युद्ध, अफगानिस्तान में युद्ध (2001–2021), गाजा युद्ध (2023–)",
+            "reference_odia": "पोइटियर्स का युद्ध, मैक्सिकन-अमेरिकी युद्ध, दूसरा बाल्कन युद्ध, अफगानिस्तान में युद्ध (2001–2021), गाजा युद्ध (2023–)",
+            "choices": [],
+            "choices_odia": [],
+            "answer": "",
+            "domain": "chrono_questions",
+            "source": "bhram_il",
+            "subset": "",
+            "split": "test",
+            "dataset_name": "bhram_il"
+          }
+        ]
+      }
+    }
+  },
+  "elapsed_seconds": 192.08
+}

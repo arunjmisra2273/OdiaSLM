@@ -1,0 +1,36 @@
+{
+  "model_path": "artifacts/tokenizer/tokenizer.model",
+  "disk_backup_path": "/mnt/d/odia_llm_data/tokenizer/tokenizer.model",
+  "model_sha256": "98440554c2b7ca4e2583af5a8afca959a5e51cdf79a6e6b19c63de8ee7c97e8d",
+  "vocab_size": 16384,
+  "special_tokens_0_to_7": {
+    "0": "<pad>",
+    "1": "<s>",
+    "2": "</s>",
+    "3": "<unk>",
+    "4": "<|system|>",
+    "5": "<|user|>",
+    "6": "<|assistant|>",
+    "7": "<|end_of_turn|>"
+  },
+  "vocab_composition": {
+    "odia_script_pieces": 12200,
+    "odia_script_pct": 74.46,
+    "latin_pieces": 3727,
+    "byte_fallback_pieces": 256,
+    "single_digit_pieces": 21
+  },
+  "input_sample_stats": {
+    "balanced_txt_path": "/mnt/d/odia_llm_data/processed/tokenizer_balanced_input.txt",
+    "total_mb": 500.13,
+    "odia_mb": 470.0,
+    "english_mb": 30.13,
+    "english_pct": 6.02,
+    "docs_sampled_by_group": {
+      "v2": 270221,
+      "sangraha": 21469,
+      "english_anchor": 6715
+    }
+  },
+  "elapsed_seconds": 3571.44
+}

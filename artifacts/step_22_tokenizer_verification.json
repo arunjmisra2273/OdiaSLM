@@ -1,0 +1,181 @@
+{
+  "all_acceptance_gates_passed": true,
+  "gate_1_lossless_roundtrip": {
+    "passed": true,
+    "checked_docs": 10000,
+    "passed_docs": 10000,
+    "failures": []
+  },
+  "gate_2_zero_unk": {
+    "passed": true,
+    "unk_tokens_found": 0,
+    "total_val_tokens_scanned": 9364042
+  },
+  "gate_3_odia_compression": {
+    "passed": true,
+    "odia_fertility_tokens_per_word": 1.4809,
+    "odia_utf8_bytes_per_token": 11.5727,
+    "odia_chars_per_token": 4.3671,
+    "odia_val_words": 5881069,
+    "odia_val_tokens": 8709542
+  },
+  "english_anchor_metrics": {
+    "en_fertility_tokens_per_word": 1.8597,
+    "en_utf8_bytes_per_token": 3.3131,
+    "en_val_words": 351940,
+    "en_val_tokens": 654500
+  },
+  "overall_val_summary": {
+    "val_docs": 47753,
+    "val_words": 6233009,
+    "val_tokens": 9364042,
+    "overall_fertility": 1.5023,
+    "doc_token_length_percentiles": {
+      "p10": 23,
+      "p25": 40,
+      "p50": 83,
+      "p75": 208,
+      "p90": 378,
+      "p95": 549,
+      "p99": 1708
+    },
+    "projected_train_bin_tokens": 1864053840,
+    "projected_train_bin_size_gb": 3.47
+  },
+  "orthographic_edge_tests": [
+    {
+      "test": "juktakshara_conjuncts",
+      "input": "ଉତ୍କଳର ସଂସ୍କୃତି, ସ୍ୱାଧୀନତା ସଂଗ୍ରାମ ଏବଂ ଜ୍ଞାନବିଜ୍ଞାନର ବିକାଶ।",
+      "num_words": 7,
+      "num_tokens": 12,
+      "fertility": 1.714,
+      "pieces": [
+        "▁ଉତ୍କ",
+        "ଳର",
+        "▁ସଂସ୍କୃତି",
+        ",",
+        "▁ସ୍ୱାଧୀନତା",
+        "▁ସଂଗ୍ରାମ",
+        "▁ଏବଂ",
+        "▁ଜ୍ଞାନ",
+        "ବିଜ୍ଞାନ",
+        "ର",
+        "▁ବିକାଶ",
+        "।"
+      ],
+      "lossless_roundtrip": true
+    },
+    {
+      "test": "nukta_and_matras",
+      "input": "ଓଡ଼ିଶাର ଗୌରବମୟ ଐତିହ୍ୟ ଓ କୃଷି ଭିତ୍ତିକ ଅର୍ଥନୀତି ସୁଦୃଢ଼ ଅଟେ।",
+      "num_words": 9,
+      "num_tokens": 15,
+      "fertility": 1.667,
+      "pieces": [
+        "▁ଓଡ଼ିଶ",
+        "<0xE0>",
+        "<0xA6>",
+        "<0xBE>",
+        "ର",
+        "▁ଗୌରବ",
+        "ମୟ",
+        "▁ଐତିହ୍ୟ",
+        "▁ଓ",
+        "▁କୃଷି",
+        "▁ଭିତ୍ତିକ",
+        "▁ଅର୍ଥନୀତି",
+        "▁ସୁଦୃଢ଼",
+        "▁ଅଟେ",
+        "।"
+      ],
+      "lossless_roundtrip": true
+    },
+    {
+      "test": "halant_zwnj_preservation",
+      "input": "ଶ୍ରୀଜଗନ୍ନାଥଙ୍କ ରଥଯାତ୍ରା ଏବଂ କ୍‌ଷେତ୍ର ପରିକ୍ରମା।",
+      "num_words": 5,
+      "num_tokens": 10,
+      "fertility": 2.0,
+      "pieces": [
+        "▁ଶ୍ରୀଜଗନ୍ନାଥ",
+        "ଙ୍କ",
+        "▁ରଥଯାତ୍ରା",
+        "▁ଏବଂ",
+        "▁କ୍",
+        "‌",
+        "ଷ",
+        "େତ୍ର",
+        "▁ପରିକ୍ରମା",
+        "।"
+      ],
+      "lossless_roundtrip": true
+    },
+    {
+      "test": "odia_and_ascii_digits",
+      "input": "୨୦୨୬ ମସିହାରେ ଓଡ଼ିଶାର ଜନସଂଖ୍ୟା 4,50,00,000 ରୁ ଅଧିକ ଅଟେ।",
+      "num_words": 8,
+      "num_tokens": 21,
+      "fertility": 2.625,
+      "pieces": [
+        "▁୨୦୨",
+        "୬",
+        "▁ମସିହାରେ",
+        "▁ଓଡ଼ିଶାର",
+        "▁ଜନସଂଖ୍ୟା",
+        "▁",
+        "4",
+        ",",
+        "5",
+        "0",
+        ",",
+        "0",
+        "0",
+        ",",
+        "0",
+        "0",
+        "0",
+        "▁ରୁ",
+        "▁ଅଧିକ",
+        "▁ଅଟେ",
+        "।"
+      ],
+      "lossless_roundtrip": true
+    },
+    {
+      "test": "code_and_bilingual",
+      "input": "Python 3.11 ଏବଂ PyTorch ବ୍ୟବହାର କରି ଆମେ Odia LLM ନିର୍ମାଣ କରୁଛୁ!",
+      "num_words": 11,
+      "num_tokens": 25,
+      "fertility": 2.273,
+      "pieces": [
+        "▁P",
+        "y",
+        "th",
+        "on",
+        "▁",
+        "3",
+        ".",
+        "1",
+        "1",
+        "▁ଏବଂ",
+        "▁P",
+        "y",
+        "T",
+        "or",
+        "ch",
+        "▁ବ୍ୟବହାର",
+        "▁କରି",
+        "▁ଆମେ",
+        "▁Odia",
+        "▁L",
+        "L",
+        "M",
+        "▁ନିର୍ମାଣ",
+        "▁କରୁଛୁ",
+        "!"
+      ],
+      "lossless_roundtrip": true
+    }
+  ],
+  "elapsed_seconds": 75.73
+}

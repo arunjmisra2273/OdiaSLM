@@ -1,0 +1,26 @@
+# Secrets & Environment
+.env
+.env.*
+venv/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Heavy Checkpoints, Binary Shards & Local Exports (>100MB)
+checkpoints/
+data/
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.zip
+*.tar.gz
+artifacts/hf_export/
+
+# Keep lightweight tokenizer, figures, JSON reports & LaTeX tables tracked
+!artifacts/tokenizer/tokenizer.model
+!artifacts/figures/**
+!artifacts/*.json
+!artifacts/*.tex
+!paper/**

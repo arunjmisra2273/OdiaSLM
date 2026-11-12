@@ -1,0 +1,59 @@
+{
+  "gate_1_wsd_schedule": {
+    "step_0": 1.4999999999999998e-06,
+    "step_399": 0.0006,
+    "step_5000_plateau": 0.0006,
+    "step_9250_mid_cooldown": 0.00021816,
+    "step_10000_final": 6e-05
+  },
+  "gate_2_single_batch_overfit_and_telemetry": {
+    "initial_loss_step_0": 9.86907,
+    "step_10_loss": 3.24326,
+    "step_25_loss": 1.53813,
+    "final_loss_step_49": 0.00393,
+    "final_overfit_top1_acc": 1.0,
+    "layer_grad_keys_logged": [
+      "embed",
+      "layer_00",
+      "layer_01",
+      "layer_02",
+      "layer_03",
+      "layer_04",
+      "layer_05",
+      "layer_06",
+      "layer_07",
+      "layer_08",
+      "layer_09",
+      "layer_10",
+      "layer_11",
+      "final_norm"
+    ],
+    "weight_rms_summary_sample": {
+      "embed": 0.02873,
+      "attn_q_mean_rms": 0.02284,
+      "mlp_up_mean_rms": 0.02248,
+      "rmsnorm_gamma_mean": 1.0013
+    },
+    "passed": true
+  },
+  "gate_3_bit_exact_resume": {
+    "uninterrupted_steps_5_to_9": [
+      9.290842,
+      9.267939,
+      9.409417,
+      9.331497,
+      8.986499
+    ],
+    "resumed_steps_5_to_9": [
+      9.290842,
+      9.267939,
+      9.409417,
+      9.331497,
+      8.986499
+    ],
+    "max_abs_loss_diff": 0.0,
+    "tokens_seen_match": true,
+    "passed": true
+  },
+  "elapsed_seconds": 188.38
+}

@@ -1,0 +1,19 @@
+{
+  "hf_username": "arunjmisra2273",
+  "dataset_repo": "arunjmisra2273/odia-slm-pretrain-bin",
+  "ckpt_repo_60m": "arunjmisra2273/odia-slm-60m-ckpt",
+  "ckpt_repo_100m": "arunjmisra2273/odia-slm-100m-ckpt",
+  "uploaded_files": [
+    "src/__init__.py",
+    "src/hygiene.py",
+    "src/model.py",
+    "src/dataset.py",
+    "src/train_gpu.py",
+    "data/bin/meta.json",
+    "data/bin/tokenizer.model",
+    "data/bin/val.bin",
+    "data/bin/train.bin"
+  ],
+  "kaggle_runner_script": "scripts/kaggle_run_60m.py",
+  "elapsed_seconds": 1043.61
+}

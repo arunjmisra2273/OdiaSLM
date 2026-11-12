@@ -1,0 +1,73 @@
+{
+  "model_60m": {
+    "variant": "60m",
+    "config": {
+      "model_variant": "60m",
+      "vocab_size": 16384,
+      "n_layers": 12,
+      "d_model": 640,
+      "n_heads": 10,
+      "n_kv_heads": 2,
+      "d_ff": 1728,
+      "max_seq_len": 1024,
+      "rope_theta": 10000.0,
+      "rms_norm_eps": 1e-05,
+      "dropout": 0.0,
+      "tie_word_embeddings": true,
+      "z_loss_coeff": 0.0001,
+      "pad_token_id": 0,
+      "bos_token_id": 1,
+      "eos_token_id": 2
+    },
+    "parameter_counts": {
+      "total_trainable_params": 62111360,
+      "embedding_params": 10485760,
+      "non_embedding_params": 51625600
+    },
+    "expected_residual_init_std": 0.004082,
+    "actual_layer0_o_proj_std": 0.004092,
+    "initial_random_ce_loss": 9.8301,
+    "theoretical_ln_vocab": 9.7041,
+    "initial_z_loss": 0.009665,
+    "initial_total_loss": 9.8398,
+    "decay_group_params": 62095360,
+    "nodecay_rmsnorm_params": 16000,
+    "seq_512_and_1024_verified": true
+  },
+  "model_100m": {
+    "variant": "100m",
+    "config": {
+      "model_variant": "100m",
+      "vocab_size": 16384,
+      "n_layers": 14,
+      "d_model": 768,
+      "n_heads": 12,
+      "n_kv_heads": 4,
+      "d_ff": 2048,
+      "max_seq_len": 1024,
+      "rope_theta": 10000.0,
+      "rms_norm_eps": 1e-05,
+      "dropout": 0.0,
+      "tie_word_embeddings": true,
+      "z_loss_coeff": 0.0001,
+      "pad_token_id": 0,
+      "bos_token_id": 1,
+      "eos_token_id": 2
+    },
+    "parameter_counts": {
+      "total_trainable_params": 100685568,
+      "embedding_params": 12582912,
+      "non_embedding_params": 88102656
+    },
+    "expected_residual_init_std": 0.00378,
+    "actual_layer0_o_proj_std": 0.003776,
+    "initial_random_ce_loss": 9.8313,
+    "theoretical_ln_vocab": 9.7041,
+    "initial_z_loss": 0.009718,
+    "initial_total_loss": 9.841,
+    "decay_group_params": 100663296,
+    "nodecay_rmsnorm_params": 22272,
+    "seq_512_and_1024_verified": true
+  },
+  "elapsed_seconds": 28.9
+}

@@ -1,0 +1,40 @@
+{
+  "dataset_name": "odia-slm-pretrain-v1",
+  "dtype": "uint16",
+  "byte_order": "little",
+  "vocab_size": 16384,
+  "bos_token_id": 1,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "unk_token_id": 3,
+  "tokenizer_sha256": "98440554c2b7ca4e2583af5a8afca959a5e51cdf79a6e6b19c63de8ee7c97e8d",
+  "interleaved_shards": 32,
+  "train": {
+    "train_bin_path": "/mnt/d/odia_llm_data/bin/train.bin",
+    "train_docs": 9571297,
+    "train_words": 1240811338,
+    "train_tokens": 1880317828,
+    "train_utf8_bytes": 20460511702,
+    "train_size_gb": 3.502,
+    "train_bytes_per_token": 10.8814,
+    "memmap_verified": true,
+    "first_token_id": 1,
+    "last_token_id": 2,
+    "max_token_id_sampled": 16383
+  },
+  "val": {
+    "val_bin_path": "/mnt/d/odia_llm_data/bin/val.bin",
+    "val_docs": 47753,
+    "val_words": 6233009,
+    "val_tokens": 9459548,
+    "val_utf8_bytes": 102961541,
+    "val_size_mb": 18.04,
+    "val_bytes_per_token": 10.8844,
+    "memmap_verified": true,
+    "first_token_id": 1,
+    "last_token_id": 2,
+    "max_token_id_sampled": 16383
+  },
+  "total_tokens": 1889777376,
+  "elapsed_seconds": 2077.88
+}

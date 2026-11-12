@@ -1,0 +1,129 @@
+{
+  "dataset_id": "saidutta69/odia_pretrain_dataset_v2",
+  "repo_metadata": {
+    "id": "saidutta69/odia_pretrain_dataset_v2",
+    "license": "cc-by-4.0",
+    "total_files": 34,
+    "parquet_files": 32,
+    "total_size_gb": 5.282,
+    "parquet_size_gb": 5.282
+  },
+  "sample_size_streamed": 100000,
+  "valid_non_empty_docs": 100000,
+  "null_or_empty_docs": 0,
+  "columns": [
+    "text",
+    "source",
+    "type",
+    "char_count",
+    "en_aligned"
+  ],
+  "text_column": "text",
+  "top_sources": {
+    "odia_web_corpus_v5": 66522,
+    "samanantar": 12855,
+    "rag-suite-oriya": 10949,
+    "varta": 7695,
+    "odia_alpaca_dolly_67k": 1976,
+    "en-oriya-translation": 3
+  },
+  "char_length_stats": {
+    "p1": 19.0,
+    "p5": 36.0,
+    "p10": 56.0,
+    "p25": 166.0,
+    "p50": 322.0,
+    "p75": 829.0,
+    "p90": 1454.0,
+    "p95": 1913.0,
+    "p99": 3202.01,
+    "mean": 599.12,
+    "max": 50206.0
+  },
+  "word_length_stats": {
+    "p1": 3.0,
+    "p5": 6.0,
+    "p10": 8.0,
+    "p25": 25.0,
+    "p50": 48.0,
+    "p75": 125.0,
+    "p90": 220.0,
+    "p95": 290.0,
+    "p99": 482.0,
+    "mean": 90.38,
+    "max": 7094.0
+  },
+  "odia_script_ratio_stats": {
+    "p1": 0.72,
+    "p5": 0.81,
+    "p10": 0.85,
+    "p25": 0.96,
+    "p50": 0.98,
+    "p75": 1.0,
+    "p90": 1.0,
+    "p95": 1.0,
+    "p99": 1.0,
+    "mean": 0.96,
+    "max": 1.0
+  },
+  "latin_script_ratio_stats": {
+    "p1": 0.0,
+    "p5": 0.0,
+    "p10": 0.0,
+    "p25": 0.0,
+    "p50": 0.0,
+    "p75": 0.01,
+    "p90": 0.11,
+    "p95": 0.14,
+    "p99": 0.21,
+    "mean": 0.02,
+    "max": 0.79
+  },
+  "hygiene_and_filter_flags": {
+    "exact_duplicates_in_sample": 15,
+    "exact_duplicate_pct": 0.01,
+    "under_150_chars_count": 22527,
+    "under_150_chars_pct": 22.53,
+    "under_25_words_count": 24722,
+    "under_25_words_pct": 24.72,
+    "low_odia_ratio_under_0_65_count": 448,
+    "low_odia_ratio_under_0_65_pct": 0.45,
+    "high_short_line_boilerplate_count": 0,
+    "high_short_line_boilerplate_pct": 0.0,
+    "inst_chat_artifact_count": 5731,
+    "html_tag_artifact_count": 0
+  },
+  "orthography_and_unicode_audit": {
+    "raw_not_nfc_count": 17403,
+    "nfkc_differs_from_nfc_count": 2930,
+    "docs_with_zws_u200b": 436,
+    "docs_with_zwnj_u200c": 17311,
+    "docs_with_zwj_u200d": 1263,
+    "docs_with_halant_u0b4d": 98723,
+    "docs_with_nukta": 41990
+  },
+  "sample_previews": [
+    {
+      "idx": 0,
+      "char_len": 291,
+      "word_len": 39,
+      "odia_ratio": 0.9605,
+      "preview": "ବିଜେପି ବିରୋଧରେ ବିରୋଧୀ କରିଥିବା ମେଣ୍ଟ I.N.D.I.Aକୁ ଆଜି ପ୍ରଧାନମନ୍ତ୍ରୀ ନରେନ୍ଦ୍ର ମୋଦି କଟାକ୍ଷ କରିଛନ୍ତି। ସେ ବିରୋଧୀ ମେଣ୍ଟକୁ ଇଂରେଜମାନଙ୍କ ଇଷ୍ଟ ଇଣ୍ଡିଆ କମ୍ପାନୀ, ଇଣ୍ଡିଆନ ମୁଜାହିଦ୍ଦିନ ଓ ପିଏଫଆଇ ସହ "
+    },
+    {
+      "idx": 3,
+      "char_len": 265,
+      "word_len": 39,
+      "odia_ratio": 0.9956,
+      "preview": "ନିଲାମ ପାଇଁ ଅର୍ଜୁନଙ୍କ ନାଁ ଯେତେବେଳେ ଡକାଗଲା, ମୁମ୍ବାଇର ସହମାଲିକ ଆକାଶ ଅମ୍ବାନୀ ତୁରନ୍ତ ଡାକ ଆରମ୍ଭ କରିଥିଲେ। ଏଥିରେ ଗୁଜରାଟ ଟାଇଟନ୍ସ ପରବର୍ତ୍ତୀ ଡାକ ଲଗାଇଥିଲା। ହେଲେ ମୁମ୍ବାଇ ପୁଣିଥରେ ଡାକ ଲଗାଇଥିଲା। ପର"
+    },
+    {
+      "idx": 5,
+      "char_len": 485,
+      "word_len": 66,
+      "odia_ratio": 0.9738,
+      "preview": "ସେପଟେ କରୋନା ଟିକାର ଅଭାବ ଦୂର କରିବା ପାଇଁ ଖୁବ୍‌ଶୀଘ୍ର ଆସିପାରେ କକଟେଲ୍‌ ଡୋଜ୍‌। ଅର୍ଥାତ ଜଣେ ବ୍ୟକ୍ତିଙ୍କୁ ଭିନ୍ନ ଭିନ୍ନ ବ୍ରାଣ୍ଡର ଦୁଇ ଡୋଜର ଟିକା ଦିଆଯାଇପାରିବ। ଉତ୍ତରପ୍ରଦେଶରେ ୧୮ ଜଣଙ୍କୁ ଭୁଲବଶତଃ ଭିନ୍ନ"
+    }
+  ],
+  "elapsed_seconds": 95.98
+}

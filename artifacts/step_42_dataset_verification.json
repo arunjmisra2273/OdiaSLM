@@ -1,0 +1,18 @@
+{
+  "train_total_tokens": 1880317828,
+  "val_total_tokens": 9459548,
+  "num_train_chunks_512": 3672495,
+  "num_train_chunks_1024": 1836247,
+  "shift_by_one_verified": true,
+  "distributed_disjoint_seqs_checked": 5120,
+  "distributed_unique_seqs": 5120,
+  "stateless_resume_step_4500_verified": true,
+  "context_extension_512_to_1024_verified": true,
+  "step0_real_val_metrics": {
+    "val_loss_ce": 9.8381,
+    "val_perplexity": 18734.3278,
+    "val_bits_per_token": 14.1934,
+    "val_bits_per_byte": 1.304
+  },
+  "elapsed_seconds": 145.9
+}

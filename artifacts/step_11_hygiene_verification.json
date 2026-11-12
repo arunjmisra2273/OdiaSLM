@@ -1,0 +1,15 @@
+{
+  "unit_tests_passed": 7,
+  "live_sample_size": 10000,
+  "accepted_total": 9148,
+  "acceptance_rate_pct": 91.48,
+  "outcome_breakdown": {
+    "accepted_odia_doc": 9148,
+    "rejected_odia_too_short": 840,
+    "rejected_low_odia_ratio": 12
+  },
+  "raw_inst_docs_seen": 0,
+  "rescued_inst_docs_after_surgical_strip": 0,
+  "kept_words_in_sample": 570790,
+  "kept_chars_in_sample": 3918755
+}

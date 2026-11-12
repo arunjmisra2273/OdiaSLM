@@ -1,0 +1,57 @@
+% Automated LaTeX Tables for Odia SLM Research Paper
+\begin{table}[ht]
+\centering
+\caption{Domain-Stratified Intrinsic Evaluation on Held-Out Validation Set}
+\begin{tabular}{lcccc}
+\hline
+\textbf{Domain Source} & \textbf{Loss (CE)} & \textbf{Perplexity} & \textbf{BPB} & \textbf{Top-1 Acc (\%)} \\
+\hline
+sangraha:verified\_ori & 3.0754 & 21.66 & 0.3750 & 40.46\% \\
+v2:odia\_web\_corpus\_v5 & 2.9469 & 19.05 & 0.3531 & 42.42\% \\
+v2:varta & 2.8242 & 16.85 & 0.3238 & 43.86\% \\
+v2:indiccorp\_v2 & 3.0930 & 22.04 & 0.3841 & 40.94\% \\
+v2:indic\_nlp\_corp & 2.9978 & 20.04 & 0.3916 & 43.17\% \\
+anchor:fineweb\_edu\_en & 3.0579 & 21.28 & 1.3085 & 41.20\% \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\caption{Zero-Shot Downstream Evaluation on Decontaminated Odia Benchmark}
+\begin{tabular}{lcccc}
+\hline
+\textbf{Benchmark Task} & \textbf{Samples} & \textbf{Random (\%)} & \textbf{Acc Raw (\%)} & \textbf{Acc Norm (\%)} \\
+\hline
+bhram\_il (qa) & 80 & 25.00\% & 32.50\% & 71.25\% \\
+flores\_plus (translation) & 80 & 25.00\% & 36.25\% & 96.25\% \\
+indic\_copa (multiple\_choice) & 80 & 50.00\% & 57.50\% & 58.75\% \\
+indic\_glue\_csqa (qa) & 80 & 25.00\% & 35.00\% & 33.75\% \\
+indic\_glue\_ner (ner) & 80 & 25.00\% & 22.50\% & 26.25\% \\
+indic\_glue\_wstp (multiple\_choice) & 80 & 25.00\% & 43.75\% & 46.25\% \\
+indic\_headline\_gen (generation) & 80 & 25.00\% & 53.75\% & 93.75\% \\
+indic\_qa (qa) & 80 & 25.00\% & 73.75\% & 93.75\% \\
+indic\_quest\_odia (qa) & 80 & 25.00\% & 27.50\% & 87.50\% \\
+indic\_question\_generation (generation) & 80 & 25.00\% & 62.50\% & 83.75\% \\
+indic\_sentence\_summarization (generation) & 80 & 25.00\% & 51.25\% & 86.25\% \\
+indic\_squad\_odia (qa) & 80 & 25.00\% & 27.50\% & 53.75\% \\
+indic\_xparaphrase (classification) & 80 & 25.00\% & 93.75\% & 100.00\% \\
+milu (multiple\_choice) & 17 & 25.00\% & 29.41\% & 29.41\% \\
+naamapadam\_odia\_ner (ner) & 80 & 25.00\% & 32.50\% & 26.25\% \\
+odia\_arc (multiple\_choice) & 80 & 25.00\% & 12.50\% & 26.25\% \\
+odia\_gsm8k (math) & 80 & 25.00\% & 63.75\% & 93.75\% \\
+odia\_hellaswag (multiple\_choice) & 80 & 25.00\% & 27.50\% & 28.75\% \\
+odia\_truthfulqa (qa) & 80 & 25.00\% & 46.25\% & 86.25\% \\
+odia\_truthfulqa\_mc (multiple\_choice) & 80 & 24.14\% & 31.25\% & 36.25\% \\
+odia\_winogrande (multiple\_choice) & 80 & 50.00\% & 51.25\% & 56.25\% \\
+sarvam\_arc\_challenge (multiple\_choice) & 80 & 25.00\% & 16.25\% & 32.50\% \\
+sarvam\_arc\_challenge\_val (multiple\_choice) & 80 & 25.00\% & 23.75\% & 30.00\% \\
+sarvam\_gsm8k\_indic (math) & 80 & 25.00\% & 36.25\% & 68.75\% \\
+sarvam\_mmlu\_indic (multiple\_choice) & 80 & 25.00\% & 20.00\% & 25.00\% \\
+sarvam\_mmlu\_indic\_val (multiple\_choice) & 80 & 25.00\% & 21.25\% & 30.00\% \\
+sarvam\_triviaqa (multiple\_choice) & 80 & 25.00\% & 51.25\% & 33.75\% \\
+\hline
+\textbf{Macro Average} & -- & 26.82\% & \textbf{40.02\%} & \textbf{56.83\%} \\
+\hline
+\end{tabular}
+\end{table}
