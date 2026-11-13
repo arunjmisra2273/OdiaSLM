@@ -1,3 +1,5 @@
+[![HF Instruct Model](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-OdiaSLM--100M--Instruct-orange)](https://huggingface.co/arunjmisra2273/OdiaSLM-100M-Instruct)
+[![HF Interactive Space](https://img.shields.io/badge/%F0%9F%8F%9B%EF%B8%8F%20HF%20Space-OdiaSLM--Chat-brightgreen)](https://huggingface.co/spaces/arunjmisra2273/OdiaSLM-Chat)
 # OdiaSLM: Sovereign 60M & 100M Small Language Models for Odia (ଓଡ଼ିଆ)
 
 [![Paper DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24167433.svg)](https://doi.org/10.5281/zenodo.24167433)
