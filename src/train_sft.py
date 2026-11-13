@@ -264,20 +264,19 @@ def main():
     train_ds = PackedSFTDataset(data_dir / "sft_train_inputs.npy", data_dir / "sft_train_labels.npy")
     val_ds = PackedSFTDataset(data_dir / "sft_val_inputs.npy", data_dir / "sft_val_labels.npy")
 
-    # Initialize OdiaSLM-100M architecture (14L, 768d, 12Q/4KV, 2048 SwiGLU, 1024 ctx)
-    cfg = OdiaSLMConfig(
-        vocab_size=16384,
-        hidden_size=768,
-        intermediate_size=2048,
-        num_hidden_layers=14,
-        num_attention_heads=12,
-        num_key_value_heads=4,
-        max_position_embeddings=1024,
-        rms_norm_eps=1e-5,
-        rope_theta=10000.0,
-        dropout=0.05,
-        tie_word_embeddings=True,
-    )
+    # Load base checkpoint metadata first so OdiaSLMConfig matches exact saved field names
+    base_ckpt = torch.load(base_ckpt_path, map_location="cpu", weights_only=False)
+    saved_cfg = base_ckpt.get("config", {})
+    if isinstance(saved_cfg, OdiaSLMConfig):
+        cfg = saved_cfg
+    elif isinstance(saved_cfg, dict) and saved_cfg:
+        valid_keys = {f.name for f in __import__("dataclasses").fields(OdiaSLMConfig)}
+        filtered_cfg = {k: v for k, v in saved_cfg.items() if k in valid_keys}
+        cfg = OdiaSLMConfig(**filtered_cfg)
+    else:
+        cfg = OdiaSLMConfig()
+    if hasattr(cfg, "dropout"):
+        cfg.dropout = 0.05
     raw_model = OdiaSLM(cfg).to(device)
 
     # Check if we are resuming an existing SFT checkpoint or starting fresh from Base 100M
@@ -323,7 +322,14 @@ def main():
             return out + noise
         return out
 
-    raw_model.tok_embeddings.register_forward_hook(neftune_hook)
+    emb_layer = getattr(raw_model, "tok_embeddings", None)
+    if emb_layer is None:
+        for m in raw_model.modules():
+            if isinstance(m, torch.nn.Embedding):
+                emb_layer = m
+                break
+    if emb_layer is not None:
+        emb_layer.register_forward_hook(neftune_hook)
 
     # Separate weight decay groups
     decay_params = [p for n, p in raw_model.named_parameters() if p.requires_grad and p.dim() >= 2]
