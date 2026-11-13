@@ -1,0 +1,42 @@
+{
+  "step": "step_111_prepare_sft_data",
+  "seq_len": 1024,
+  "ignore_index": -100,
+  "filter_stats": {
+    "raw_examined": 134085,
+    "rejected_short_or_empty": 3888,
+    "rejected_script_ratio": 1192,
+    "rejected_banned_identity": 407,
+    "rejected_duplicates": 335,
+    "rejected_decontam": 321,
+    "kept_by_source": {
+      "sovereign_identity": 24,
+      "gpt_teacher_18k": 17360,
+      "dolly_odia_15k": 14033,
+      "gpt_roleplay_3k": 3114,
+      "alpaca_odia_52k": 47435,
+      "odia_news_instruct": 20000,
+      "odia_context_qa": 18000,
+      "odiencorp_translation": 8000
+    }
+  },
+  "packing_stats": {
+    "train": {
+      "num_examples": 126587,
+      "num_packed_blocks_1024": 25988,
+      "total_block_tokens": 26611712,
+      "active_assistant_loss_tokens": 11780267,
+      "masked_user_prompt_tokens": 11393718,
+      "packing_efficiency_pct": 87.08
+    },
+    "val": {
+      "num_examples": 1500,
+      "num_packed_blocks_1024": 306,
+      "total_block_tokens": 313344,
+      "active_assistant_loss_tokens": 141264,
+      "masked_user_prompt_tokens": 132777,
+      "packing_efficiency_pct": 87.46
+    }
+  },
+  "hf_sft_dataset_repo": "arunjmisra2273/odia-slm-sft-bin"
+}
