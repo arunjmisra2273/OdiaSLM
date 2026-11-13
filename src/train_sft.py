@@ -31,6 +31,14 @@ from huggingface_hub import HfApi, hf_hub_download
 from src.model import OdiaSLM, OdiaSLMConfig
 
 
+def extract_logits(out) -> torch.Tensor:
+    if isinstance(out, dict):
+        return out["logits"]
+    if isinstance(out, (tuple, list)):
+        return out[0]
+    return out
+
+
 class PackedSFTDataset:
     """Memory-mapped loader for 1024-token packed SFT inputs (uint16) and loss-masked labels (int32)."""
 
@@ -105,7 +113,7 @@ def evaluate_sft_validation(
         x, y = val_ds.get_batch(idx, device)
         with torch.amp.autocast("cuda", enabled=(device.type == "cuda"), dtype=torch.float16):
             out = raw_model(x)
-            logits = out[0] if isinstance(out, tuple) else out
+            logits = extract_logits(out)
 
         flat_logits = logits.reshape(-1, logits.size(-1)).float()
         flat_y = y.reshape(-1)
@@ -151,7 +159,7 @@ def generate_chat_sample(
     for _ in range(max_new_tokens):
         with torch.amp.autocast("cuda", enabled=(device.type == "cuda"), dtype=torch.float16):
             out = raw_model(x[:, -1023:])
-            logits = out[0] if isinstance(out, tuple) else out
+            logits = extract_logits(out)
         next_logits = logits[0, -1, :].float()
         # Mild repetition penalty (1.15) + greedy/low-temp decoding for deterministic sanity check
         for prev_id in set(generated[-32:]):
@@ -274,7 +282,17 @@ def main():
         filtered_cfg = {k: v for k, v in saved_cfg.items() if k in valid_keys}
         cfg = OdiaSLMConfig(**filtered_cfg)
     else:
-        cfg = OdiaSLMConfig()
+        cfg = OdiaSLMConfig(
+            model_variant="OdiaSLM-100M",
+            vocab_size=16384,
+            n_layers=14,
+            d_model=768,
+            n_heads=12,
+            n_kv_heads=4,
+            d_ff=2048,
+            max_seq_len=1024,
+            dropout=0.05,
+        )
     if hasattr(cfg, "dropout"):
         cfg.dropout = 0.05
     raw_model = OdiaSLM(cfg).to(device)
@@ -390,7 +408,7 @@ def main():
             with sync_ctx:
                 with torch.amp.autocast("cuda", enabled=(device.type == "cuda"), dtype=torch.float16):
                     out = model(x)
-                    logits = out[0] if isinstance(out, tuple) else out
+                    logits = extract_logits(out)
                     loss, ce_val, z_val, act_cnt = compute_sft_loss_with_zloss(logits, y)
                     scaled_loss = loss / args.grad_accum_steps
                 scaler.scale(scaled_loss).backward()
