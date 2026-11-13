@@ -272,29 +272,29 @@ def main():
     train_ds = PackedSFTDataset(data_dir / "sft_train_inputs.npy", data_dir / "sft_train_labels.npy")
     val_ds = PackedSFTDataset(data_dir / "sft_val_inputs.npy", data_dir / "sft_val_labels.npy")
 
-    # Load base checkpoint metadata first so OdiaSLMConfig matches exact saved field names
+    # Explicitly instantiate the exact OdiaSLM-100M architecture (14L, 768d, 12Q/4KV, 2048 SwiGLU)
     base_ckpt = torch.load(base_ckpt_path, map_location="cpu", weights_only=False)
-    saved_cfg = base_ckpt.get("config", {})
-    if isinstance(saved_cfg, OdiaSLMConfig):
-        cfg = saved_cfg
-    elif isinstance(saved_cfg, dict) and saved_cfg:
-        valid_keys = {f.name for f in __import__("dataclasses").fields(OdiaSLMConfig)}
-        filtered_cfg = {k: v for k, v in saved_cfg.items() if k in valid_keys}
-        cfg = OdiaSLMConfig(**filtered_cfg)
-    else:
-        cfg = OdiaSLMConfig(
-            model_variant="OdiaSLM-100M",
-            vocab_size=16384,
-            n_layers=14,
-            d_model=768,
-            n_heads=12,
-            n_kv_heads=4,
-            d_ff=2048,
-            max_seq_len=1024,
-            dropout=0.05,
-        )
-    if hasattr(cfg, "dropout"):
-        cfg.dropout = 0.05
+    cfg = OdiaSLMConfig(
+        model_variant="100m",
+        vocab_size=16384,
+        n_layers=14,
+        d_model=768,
+        n_heads=12,
+        n_kv_heads=4,
+        d_ff=2048,
+        max_seq_len=1024,
+        rope_theta=10000.0,
+        rms_norm_eps=1e-5,
+        dropout=0.05,
+        tie_word_embeddings=True,
+    )
+    cfg.n_layers = 14
+    cfg.d_model = 768
+    cfg.n_heads = 12
+    cfg.n_kv_heads = 4
+    cfg.d_ff = 2048
+    cfg.max_seq_len = 1024
+    cfg.vocab_size = 16384
     raw_model = OdiaSLM(cfg).to(device)
 
     # Check if we are resuming an existing SFT checkpoint or starting fresh from Base 100M
@@ -326,10 +326,12 @@ def main():
             print(f"Resumed SFT from step {start_step} (best_val_loss={best_val_loss:.4f})")
     else:
         base_ckpt = torch.load(base_ckpt_path, map_location=device, weights_only=False)
-        state_dict = base_ckpt.get("model_state_dict", base_ckpt)
-        raw_model.load_state_dict(state_dict, strict=True)
+        state_dict = base_ckpt.get("model_state_dict") or base_ckpt.get("model") or base_ckpt
+        clean_sd = {k.replace("module.", "").replace("_orig_mod.", ""): v for k, v in state_dict.items()}
+        raw_model.load_state_dict(clean_sd, strict=True)
         if is_master:
-            print(f"Loaded pretrained OdiaSLM-100M base weights from {base_ckpt_path} (Step {base_ckpt.get('step', '11999')})")
+            step_num = base_ckpt.get("global_step", base_ckpt.get("step", "11999"))
+            print(f"Loaded pretrained OdiaSLM-100M base weights from {base_ckpt_path} (Step {step_num})")
 
     # Register NEFTune forward hook on token embeddings during training
     def neftune_hook(module, inp, out):
