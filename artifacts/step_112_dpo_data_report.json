@@ -1,0 +1,17 @@
+{
+  "step": "step_112_prepare_dpo_data",
+  "track_stats": {
+    "track1_sovereign_identity": 600,
+    "track2_anti_repetition": 3603,
+    "track3_completeness_vs_truncation": 3593,
+    "track4_script_and_format_purity": 3603,
+    "track5_factual_grounding_vs_hallucination": 3601
+  },
+  "tokenization_meta": {
+    "total_tokenized_triplets": 15000,
+    "train_triplets": 14550,
+    "val_triplets": 450,
+    "max_dpo_seq_len": 512,
+    "hf_dpo_dataset_repo": "arunjmisra2273/odia-slm-dpo-bin"
+  }
+}
