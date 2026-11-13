@@ -1,0 +1,58 @@
+\begin{thebibliography}{10}
+
+\bibitem{ainslie2023gqa}
+Joshua Ainslie, James Lee-Thorp, Michiel de~Jong, Yury Zemlyanskiy, Federico Lebr{\'o}n, and Sumit Sanghai.
+\newblock {GQA}: Training generalized multi-query transformer models from multi-head checkpoints.
+\newblock In {\em Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing (EMNLP)}, pages 4895--4901, 2023.
+
+\bibitem{brown2020language}
+Tom Brown, Benjamin Mann, Nick Ryder, et~al.
+\newblock Language models are few-shot learners.
+\newblock {\em Advances in Neural Information Processing Systems (NeurIPS)}, 33:1877--1901, 2020.
+
+\bibitem{chowdhery2023palm}
+Aakanksha Chowdhery, Sharan Narang, Jacob Devlin, et~al.
+\newblock {PaLM}: Scaling language modeling with pathways.
+\newblock {\em Journal of Machine Learning Research}, 24(240):1--113, 2023.
+
+\bibitem{dubey2024llama3}
+Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, et~al.
+\newblock The {Llama} 3 herd of models.
+\newblock {\em arXiv preprint arXiv:2407.21783}, 2024.
+
+\bibitem{holzmann2021pmi}
+Ari Holtzman, Peter West, Vered Shwartz, Yejin Choi, and Luke Zettlemoyer.
+\newblock Surface form competition: Why the highest probability answer isn't always right.
+\newblock In {\em Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing (EMNLP)}, pages 7038--7051, 2021.
+
+\bibitem{hu2024minicpm}
+Shengding Hu, Yuge Tu, Xu~Han, et~al.
+\newblock {MiniCPM}: Unveiling the potential of small language models with scalable training strategies.
+\newblock {\em arXiv preprint arXiv:2404.06395}, 2024.
+
+\bibitem{khan2024indicllmsuite}
+Mohammed Safi Ur~Rahman Khan, Priyam Mehta, Ananth Sankar, et~al.
+\newblock {IndicLLMSuite}: A blueprint for creating pre-training and fine-tuning datasets for {Indian} languages.
+\newblock {\em Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (ACL)}, 2024.
+
+\bibitem{kudo2018sentencepiece}
+Taku Kudo and John Richardson.
+\newblock {SentencePiece}: A simple and language independent subword tokenizer and detokenizer for neural text processing.
+\newblock In {\em Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing: System Demonstrations}, pages 66--71, 2018.
+
+\bibitem{shazeer2020glu}
+Noam Shazeer.
+\newblock {GLU} variants improve transformer.
+\newblock {\em arXiv preprint arXiv:2002.05202}, 2020.
+
+\bibitem{su2024roformer}
+Jianlin Su, Murtadha Ahmed, Yu~Lu, Shengfeng Pan, Wen Bo, and Yunfeng Liu.
+\newblock {RoFormer}: Enhanced transformer with rotary position embedding.
+\newblock {\em Neurocomputing}, 568:127063, 2024.
+
+\bibitem{zhang2019root}
+Biao Zhang and Rico Sennrich.
+\newblock Root mean square layer normalization.
+\newblock {\em Advances in Neural Information Processing Systems (NeurIPS)}, 32, 2019.
+
+\end{thebibliography}
